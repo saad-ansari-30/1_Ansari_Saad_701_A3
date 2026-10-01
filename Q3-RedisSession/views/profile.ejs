@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Redis Profile</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f4f6;
+            padding: 30px;
+        }
+
+        .container {
+            width: 700px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            color: #16a34a;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 15px;
+            margin: 5px;
+            text-decoration: none;
+            border-radius: 5px;
+            color: white;
+            background: #2563eb;
+        }
+
+        .logout {
+            background: #dc2626;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <h1>
+        Employee Profile
+    </h1>
+
+
+    <p>
+        Logged in user:
+        <strong><%= username %></strong>
+    </p>
+
+
+    <hr>
+
+
+    <h3>
+        Protected Route 2
+    </h3>
+
+
+    <table border="1" cellpadding="10">
+
+        <tr>
+            <th>Username</th>
+            <td>
+                <%= username %>
+            </td>
+        </tr>
+
+        <tr>
+            <th>Session Store</th>
+            <td>
+                Redis
+            </td>
+        </tr>
+
+        <tr>
+            <th>Status</th>
+            <td>
+                Logged In
+            </td>
+        </tr>
+
+    </table>
+
+
+    <br>
+
+
+    <a href="/dashboard">
+        Dashboard
+    </a>
+
+
+    <a
+        href="/logout"
+        class="logout"
+    >
+        Logout
+    </a>
+
+</div>
+
+</body>
+
+</html>

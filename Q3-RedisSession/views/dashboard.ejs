@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Redis Dashboard</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f4f6;
+            padding: 30px;
+        }
+
+        .container {
+            width: 700px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            color: #dc2626;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 15px;
+            margin: 5px;
+            text-decoration: none;
+            border-radius: 5px;
+            color: white;
+            background: #2563eb;
+        }
+
+        .logout {
+            background: #dc2626;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <h1>
+        Redis Dashboard
+    </h1>
+
+
+    <p>
+        Welcome,
+        <strong><%= username %></strong>
+    </p>
+
+
+    <hr>
+
+
+    <h3>
+        Protected Route 1
+    </h3>
+
+
+    <p>
+        This page is protected using a Redis session.
+    </p>
+
+
+    <a href="/profile">
+        Go to Profile
+    </a>
+
+
+    <a
+        href="/logout"
+        class="logout"
+    >
+        Logout
+    </a>
+
+</div>
+
+</body>
+
+</html>

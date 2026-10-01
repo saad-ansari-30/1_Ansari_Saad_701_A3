@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin ERP Login</title>
+</head>
+
+<body>
+
+    <h1>Admin ERP Panel</h1>
+
+    <h2>Admin Login</h2>
+
+    <% if (error) { %>
+
+        <p style="color: red;">
+            <%= error %>
+        </p>
+
+    <% } %>
+
+    <form action="/login" method="POST">
+
+        <div>
+            <label>Username:</label>
+
+            <input
+                type="text"
+                name="username"
+                required
+            >
+        </div>
+
+        <br>
+
+        <div>
+            <label>Password:</label>
+
+            <input
+                type="password"
+                name="password"
+                required
+            >
+        </div>
+
+        <br>
+
+        <button type="submit">
+            Login
+        </button>
+
+    </form>
+
+    <hr>
+
+    <p>
+        <strong>Demo Login</strong>
+    </p>
+
+    <p>
+        Username: admin
+        <br>
+        Password: admin123
+    </p>
+
+</body>
+
+</html>

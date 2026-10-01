@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Login</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f4f6;
+            padding: 50px;
+        }
+
+        .container {
+            width: 400px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2563eb;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .error {
+            background: #fee2e2;
+            color: #b91c1c;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
+        .info {
+            margin-top: 20px;
+            background: #dbeafe;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <h1>Login</h1>
+
+
+    <% if (error) { %>
+
+        <div class="error">
+
+            <%= error %>
+
+        </div>
+
+    <% } %>
+
+
+    <form action="/login" method="POST">
+
+
+        <label>
+            Username
+        </label>
+
+        <input
+            type="text"
+            name="username"
+            required
+        >
+
+
+        <label>
+            Password
+        </label>
+
+        <input
+            type="password"
+            name="password"
+            required
+        >
+
+
+        <button type="submit">
+            Login
+        </button>
+
+
+    </form>
+
+
+    <div class="info">
+
+        <strong>Demo Login</strong>
+
+        <br><br>
+
+        Username: admin
+
+        <br>
+
+        Password: 123456
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Edit Employee</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background-color: #555;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Edit Employee</h1>
+
+    <form
+        action="/employees/edit/<%= employee._id %>"
+        method="POST">
+
+
+        <!-- EMPLOYEE ID -->
+
+        <label>
+            Employee ID
+        </label>
+
+        <input
+            type="text"
+            value="<%= employee.empId %>"
+            disabled>
+
+
+        <!-- NAME -->
+
+        <label>
+            Employee Name
+        </label>
+
+        <input
+            type="text"
+            name="name"
+            value="<%= employee.name %>"
+            required>
+
+
+        <!-- EMAIL -->
+
+        <label>
+            Email
+        </label>
+
+        <input
+            type="email"
+            name="email"
+            value="<%= employee.email %>"
+            required>
+
+
+        <!-- DEPARTMENT -->
+
+        <label>
+            Department
+        </label>
+
+        <select
+            name="department"
+            required>
+
+            <option value="HR"
+                <%= employee.department === "HR" ? "selected" : "" %>>
+                HR
+            </option>
+
+            <option value="IT"
+                <%= employee.department === "IT" ? "selected" : "" %>>
+                IT
+            </option>
+
+            <option value="Finance"
+                <%= employee.department === "Finance" ? "selected" : "" %>>
+                Finance
+            </option>
+
+            <option value="Sales"
+                <%= employee.department === "Sales" ? "selected" : "" %>>
+                Sales
+            </option>
+
+            <option value="Marketing"
+                <%= employee.department === "Marketing" ? "selected" : "" %>>
+                Marketing
+            </option>
+
+        </select>
+
+
+        <!-- DESIGNATION -->
+
+        <label>
+            Designation
+        </label>
+
+        <input
+            type="text"
+            name="designation"
+            value="<%= employee.designation %>"
+            required>
+
+
+        <!-- BASIC SALARY -->
+
+        <label>
+            Basic Salary
+        </label>
+
+        <input
+            type="number"
+            name="basicSalary"
+            value="<%= employee.basicSalary %>"
+            min="0"
+            required>
+
+
+        <!-- JOINING DATE -->
+
+        <label>
+            Joining Date
+        </label>
+
+        <input
+            type="date"
+            name="joiningDate"
+            value="<%= employee.joiningDate.toISOString().split('T')[0] %>"
+            required>
+
+
+        <!-- SUBMIT -->
+
+        <button type="submit">
+
+            Update Employee
+
+        </button>
+
+    </form>
+
+
+    <br>
+
+    <a
+        href="/employees"
+        class="back">
+
+        Back to Employees
+
+    </a>
+
+</div>
+
+</body>
+
+</html>
